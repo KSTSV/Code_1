@@ -1,2 +1,46 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# с1-с24  - переменные-счетчики. Цифра - длина слова
+c1, c2, c3, c4, c5, c6, c7, c8, c9 = 0, 0, 0, 0, 0, 0, 0, 0, 0
+c10, c11, c12, c13, c14, c15 = 0, 0, 0, 0, 0, 0
+c16, c17, c18, c19 = 0, 0, 0, 0
+c20, c21, c22, c23, c24 = 0, 0, 0, 0, 0
+
+with open ("text.txt", "r", encoding = "utf-8") as f: # открытие файла с текстом
+    for line in f: #файл разбит на строки. Пробег по каждой строке
+        line = line.split() # разбить каждую строку на отдельные слова - создать список
+        for i in line: # для каждого элемента (слова) в списке
+            i = i.strip('.,()«»') # удаление по краям ненужных символов
+# check: если все буквы НЕ заглавные и элемент состоит только из букв 
+            if (i.isupper() == False) and (i.isalpha() == True): 
+# check: если длина равна цифре в переменной => счетчик + 1
+                if len(i) == 1: c1+=1
+                elif len(i) == 2:c2+=1
+                elif len(i) == 3: c3+=1
+                elif len(i) == 4: c4+=1
+                elif len(i) == 5: c5+=1
+                elif len(i) == 6: c6+=1
+                elif len(i) == 7: c7+=1
+                elif len(i) == 8: c8+=1
+                elif len(i) == 9: c9+=1
+                elif len(i) == 10: c10+=1
+                elif len(i) == 11: c11+=1
+                elif len(i) == 12: c12+=1
+                elif len(i) == 13: c13+=1
+                elif len(i) == 14: c14+=1
+                elif len(i) == 15: c15+=1
+                elif len(i) == 16: c16+=1
+                elif len(i) == 17: c17+=1
+                elif len(i) == 18: c18+=1
+                elif len(i) == 19: c19+=1
+                elif len(i) == 20: c20+=1
+                elif len(i) == 21: c21+=1
+                elif len(i) == 22: c22+=1
+                elif len(i) == 23: c23+=1
+                elif len(i) == 24: c24+=1
+# запись результатов в новый файл
+with open ("final.txt", "w", encoding = "utf-8") as fin:
+    print( f" 1 letter: {c1} \n 2 letters: {c2} \n 3 letters: {c3} \n 4 letters: {c4}", file = fin)
+    print( f" 5 letters: {c5} \n 6 letters: {c6} \n 7 letters: {c7} \n 8 letters: {c8}", file = fin)
+    print( f" 9 letters: {c9} \n 10 letters: {c10} \n 11 letters: {c11} \n 12 letters: {c12}", file = fin)
+    print( f" 13 letters: {c13} \n 14 letters: {c14} \n 15 letters: {c15} \n 16 letters: {c16}", file = fin)             
+    print( f" 17 letters: {c17} \n 18 letters: {c18} \n 19 letters: {c19} \n 20 letters: {c20}", file = fin)
+    print( f" 21 letters: {c21} \n 22 letters: {c22} \n 23 letters: {c23} \n 24 letters: {c24}", file = fin)
